@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Legal articles and insights from Maurlex & Co. Stay informed about Nigerian law, business regulations, tax updates, and legal best practices.">
+    <meta name="keywords" content="legal articles Nigeria, law blog Abuja, Nigerian law updates, legal insights, business law articles">
+    <meta name="author" content="Maurlex & Co.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.maurlexandco.com/articles.html">
+    
+    <meta property="og:title" content="Articles & Insights - Maurlex & Co.">
+    <meta property="og:description" content="Legal insights and updates from expert lawyers in Nigeria.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.maurlexandco.com/articles.html">
+    <meta property="og:image" content="https://www.maurlexandco.com/images/team-image.jpeg">
+    <meta property="og:site_name" content="Maurlex & Co.">
+    
+    <title>Legal Articles & Insights - Maurlex & Co. | Nigeria Law Blog</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        /* Original Beautiful UI Styles - KEEPING ALL OF THIS */
+        .articles-intro { max-width: 800px; margin: 0 auto 60px; text-align: center; }
+        .filter-bar { display: flex; justify-content: center; gap: 15px; margin-bottom: 60px; flex-wrap: wrap; }
+        .filter-btn { padding: 10px 24px; border: 2px solid var(--grey-light); background: var(--white); color: var(--grey); border-radius: 30px; font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s ease; }
+        .filter-btn:hover, .filter-btn.active { border-color: var(--gold); background: var(--gold); color: var(--black); }
+        .search-bar { max-width: 600px; margin: 0 auto 60px; position: relative; }
+        .search-input { width: 100%; padding: 16px 50px 16px 20px; border: 2px solid var(--grey-light); border-radius: 30px; font-size: 15px; transition: all 0.3s ease; }
+        .search-input:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1); }
+        .search-icon { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: var(--grey); pointer-events: none; }
+        .pagination { display: flex; justify-content: center; gap: 10px; margin-top: 80px; }
+        .page-btn { width: 45px; height: 45px; border: 2px solid var(--grey-light); background: var(--white); color: var(--grey); border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; }
+        .page-btn:hover, .page-btn.active { border-color: var(--gold); background: var(--gold); color: var(--black); }
+        .page-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+        .content-with-sidebar { display: grid; grid-template-columns: 1fr 350px; gap: 60px; margin-top: 60px; }
+        .sidebar { background: var(--grey-bg); padding: 40px; border-radius: 8px; position: sticky; top: 120px; }
+        .sidebar-section { margin-bottom: 40px; }
+        .sidebar-section:last-child { margin-bottom: 0; }
+        .sidebar-title { font-size: 20px; margin-bottom: 20px; color: var(--black); }
+        .category-list { list-style: none; }
+        .category-item { padding: 12px 0; border-bottom: 1px solid var(--grey-light); display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: all 0.3s ease; }
+        .category-item:hover { color: var(--gold); }
+        .category-item:last-child { border-bottom: none; }
+        .category-link { color: var(--grey); font-size: 15px; transition: all 0.3s ease; }
+        .category-link:hover { color: var(--gold); padding-left: 5px; }
+        .category-count { background: rgba(212, 175, 55, 0.1); color: var(--gold); padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 600; }
+        .newsletter-sidebar { background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%); padding: 40px 35px; border-radius: 8px; color: var(--white); text-align: center; }
+        .newsletter-icon { width: 60px; height: 60px; margin: 0 auto 20px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); }
+        .newsletter-sidebar h3 { font-size: 22px; margin-bottom: 12px; color: var(--white); }
+        .newsletter-sidebar p { font-size: 14px; margin-bottom: 25px; color: rgba(255, 255, 255, 0.8); }
+        .newsletter-sidebar .newsletter-input { margin-bottom: 15px; }
+        @media (max-width: 1024px) { .content-with-sidebar { grid-template-columns: 1fr; gap: 40px; } .sidebar { position: static; } }
+    </style>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="logo">MAURLEX & CO.</a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <a href="/practice-areas.html" class="nav-link">Practice Areas</a>
+                    <a href="/team.html" class="nav-link">Team</a>
+                    <a href="/articles.html" class="nav-link active">Articles</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title animate-fade-up">Articles & Insights</h1>
+                <p class="page-subtitle animate-fade-up delay-1">Stay informed with our latest legal updates and expert analysis</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <div class="articles-intro animate-fade-up">
+                <p class="section-text" style="font-size: 1.1rem;">
+                    Explore our collection of articles covering various legal topics, industry insights, and 
+                    regulatory updates. Our team of experts shares knowledge to help you stay informed and make 
+                    better decisions.
+                </p>
+            </div>
+            
+            <div class="search-bar animate-fade-up delay-1">
+                <input type="text" class="search-input" placeholder="Search articles..." id="articleSearch">
+                <svg class="search-icon" width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                </svg>
+            </div>
+            
+            <div class="filter-bar animate-fade-up delay-2" id="filterBar">
+                <button class="filter-btn active" data-category="All">All Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light" style="padding-top: 0;">
+        <div class="container">
+            <div class="content-with-sidebar">
+                <div>
+                    <div class="articles-grid" id="articlesGrid">
+                        <div style="text-align: center; padding: 60px; color: var(--grey);">Loading articles...</div>
+                    </div>
+
+                    <div class="pagination" id="pagination"></div>
+                </div>
+
+                <aside>
+                    <div class="sidebar animate-fade-up">
+                        <div class="sidebar-section">
+                            <h3 class="sidebar-title">Categories</h3>
+                            <ul class="category-list" id="categoriesList">
+                                <li class="category-item"><span>Loading...</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="newsletter-sidebar animate-fade-up delay-2" style="margin-top: 30px;">
+                        <div class="newsletter-icon">
+                            <svg width="30" height="30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3>Get Legal Updates</h3>
+                        <p>Subscribe to receive weekly insights and updates directly to your inbox.</p>
+                        <form id="sidebarNewsletterForm">
+                            <input type="email" class="newsletter-input" placeholder="Your email address" required>
+                            <button type="submit" class="btn btn-primary btn-block">Subscribe</button>
+                        </form>
+                        <div id="sidebarNewsletterMessage" class="form-message"></div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2 class="section-title animate-fade-up">Need Legal Advice?</h2>
+                <p class="section-subtitle animate-fade-up delay-1">
+                    Our experienced team is ready to help you navigate complex legal matters with confidence.
+                </p>
+                <div class="cta-buttons animate-fade-up delay-2">
+                    <a href="/contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                    <a href="/practice-areas.html" class="btn btn-outline-light">View Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">MAURLEX & CO.</div>
+                    <p class="footer-description">Expert legal and business solutions for individuals, startups, and businesses. Strategic guidance you can trust.</p>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>No. 23 Kubwa shopping Mall, Hamza Abdullahi Street Kubwa FCT Abuja</li>
+                        <li>+234 706 060 9806</li>
+                        <li>maurlexandco@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Valid Point Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/2347060609806" class="whatsapp-float" target="_blank">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="/js/main.js"></script>
+    <script>
+        let currentPage = 1;
+        let currentCategory = 'All';
+        let currentSearch = '';
+
+        async function loadArticles(page = 1, category = 'All', search = '') {
+            try {
+                currentPage = page;
+                currentCategory = category;
+                currentSearch = search;
+
+                const url = `/api/articles/search?page=${page}&limit=9&category=${category}&q=${search}`;
+                const response = await fetch(url);
+                const data = await response.json();
+
+                const grid = document.getElementById('articlesGrid');
+                
+                if (data.articles.length === 0) {
+                    grid.innerHTML = '<div style="text-align: center; padding: 60px; color: var(--grey);">No articles found.</div>';
+                    document.getElementById('pagination').innerHTML = '';
+                    return;
+                }
+
+                grid.innerHTML = data.articles.map(article => `
+                    <a href="/article.html?slug=${article.slug}" class="article-card">
+                        <div class="article-image" style="background-image: url('${article.image}')"></div>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-date">
+                                    <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+                                    </svg>
+                                    ${new Date(article.createdAt).toLocaleDateString()}
+                                </span>
+                                <span class="article-category">${article.category}</span>
+                            </div>
+                            <h3 class="article-title">${article.title}</h3>
+                            <p class="article-excerpt">${article.excerpt}</p>
+                            <span class="article-link">Read Article →</span>
+                        </div>
+                    </a>
+                `).join('');
+
+                renderPagination(data.currentPage, data.totalPages);
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('articlesGrid').innerHTML = '<div style="text-align: center; padding: 60px; color: #dc3545;">Error loading articles. Please try again.</div>';
+            }
+        }
+
+        function renderPagination(current, total) {
+            const pagination = document.getElementById('pagination');
+            if (total <= 1) {
+                pagination.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+            if (current > 1) {
+                html += `<button class="page-btn" onclick="loadArticles(${current - 1}, '${currentCategory}', '${currentSearch}')">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+                    </svg>
+                </button>`;
+            }
+
+            for (let i = 1; i <= total; i++) {
+                if (i === 1 || i === total || (i >= current - 2 && i <= current + 2)) {
+                    html += `<button class="page-btn ${i === current ? 'active' : ''}" onclick="loadArticles(${i}, '${currentCategory}', '${currentSearch}')">${i}</button>`;
+                } else if (i === current - 3 || i === current + 3) {
+                    html += '<span style="padding: 10px;">...</span>';
+                }
+            }
+
+            if (current < total) {
+                html += `<button class="page-btn" onclick="loadArticles(${current + 1}, '${currentCategory}', '${currentSearch}')">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+                    </svg>
+                </button>`;
+            }
+
+            pagination.innerHTML = html;
+        }
+
+        async function loadCategories() {
+            try {
+                const response = await fetch('/api/articles/categories');
+                const categories = await response.json();
+
+                const filterBar = document.getElementById('filterBar');
+                const categoriesList = document.getElementById('categoriesList');
+
+                // Add to filter bar
+                categories.forEach(cat => {
+                    const btn = document.createElement('button');
+                    btn.className = 'filter-btn';
+                    btn.textContent = cat._id;
+                    btn.setAttribute('data-category', cat._id);
+                    btn.onclick = () => filterByCategory(cat._id);
+                    filterBar.appendChild(btn);
+                });
+
+                // Add to sidebar
+                categoriesList.innerHTML = categories.map(cat => `
+                    <li class="category-item" onclick="filterByCategory('${cat._id}')">
+                        <a class="category-link">${cat._id}</a>
+                        <span class="category-count">${cat.count}</span>
+                    </li>
+                `).join('');
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        function filterByCategory(category) {
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+            });
+            loadArticles(1, category, currentSearch);
+        }
+
+        // Search functionality
+        document.getElementById('articleSearch').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                const search = e.target.value;
+                loadArticles(1, currentCategory, search);
+            }
+        });
+
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        loadArticles();
+        loadCategories();
+    </script>
+</body>
+</html>

@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Meet the legal team at Maurlex & Co. - Experienced lawyers and attorneys in Abuja, Nigeria. Our team provides expert legal representation across all practice areas.">
+    <meta name="keywords" content="lawyers Maurlex, attorneys Abuja, legal team Nigeria, experienced lawyers, law firm team Abuja">
+    <meta name="author" content="Maurlex & Co.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.maurlexandco.com/team.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Our Team - Maurlex & Co. | Lawyers in Abuja, Nigeria">
+    <meta property="og:description" content="Meet our experienced legal team providing expert services across Nigeria.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.maurlexandco.com/team.html">
+    <meta property="og:image" content="https://www.maurlexandco.com/images/team-image.jpeg">
+    <meta property="og:site_name" content="Maurlex & Co.">
+    <meta property="og:locale" content="en_NG">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Team - Maurlex & Co.">
+    <meta name="twitter:description" content="Experienced lawyers in Abuja, Nigeria.">
+    <meta name="twitter:image" content="https://www.maurlexandco.com/images/team-image.jpeg">
+    
+    <title>Our Team - Maurlex & Co. | Experienced Lawyers in Abuja, Nigeria</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <style>
+        /* Additional styles specific to Team page */
+        .team-intro {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            text-align: center;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+        
+        .team-member {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+            border-color: var(--gold);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2);
+        }
+        
+        .team-photo {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .team-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .team-member:hover .team-photo img {
+            transform: scale(1.1);
+        }
+        
+        .photo-placeholder {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            border: 3px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 64px;
+            color: var(--gold);
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+        
+        .team-info {
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .team-name {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+        
+        .team-position {
+            font-size: 15px;
+            color: var(--gold);
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .team-bio {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--grey);
+            margin-bottom: 20px;
+        }
+        
+        .team-specialties {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid var(--grey-light);
+        }
+        
+        .specialty-label {
+            font-size: 12px;
+            color: var(--grey);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .specialty-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        
+        .specialty-tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--gold);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .team-contact {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .contact-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            transition: all 0.3s ease;
+        }
+        
+        .contact-icon:hover {
+            background: var(--gold);
+            color: var(--black);
+            transform: translateY(-3px);
+        }
+        
+        .leadership-section {
+            margin-bottom: 80px;
+        }
+        
+        .section-divider {
+            text-align: center;
+            margin: 80px 0 60px;
+        }
+        
+        .divider-line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+            margin: 30px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+        
+        .value-card {
+            text-align: center;
+            padding: 35px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .value-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+        
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: rgba(212, 175, 55, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+        }
+        
+        .value-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+        
+        .value-text {
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        @media (max-width: 768px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="logo">MAURLEX & CO.</a>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <a href="/practice-areas.html" class="nav-link">Practice Areas</a>
+                    <a href="/team.html" class="nav-link active">Team</a>
+                    <a href="/articles.html" class="nav-link">Articles</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title animate-fade-up">Our Team</h1>
+                <p class="page-subtitle animate-fade-up delay-1">Experienced professionals dedicated to your success</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Introduction -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="team-intro animate-fade-up">
+                <h2 class="section-title">Meet Our Legal Experts</h2>
+                <p class="section-text" style="font-size: 1.1rem;">
+                    Our team comprises highly skilled legal professionals with diverse expertise across multiple 
+                    practice areas. We are committed to delivering exceptional service and achieving the best 
+                    possible outcomes for our clients.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team -->
+    <section class="section section-light leadership-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title animate-fade-up">Leadership</h2>
+                <p class="section-subtitle animate-fade-up delay-1">Guiding our firm with vision and expertise</p>
+            </div>
+            
+            <div class="team-grid">
+                <!-- Managing Partner -->
+                <div class="team-member animate-fade-up">
+                    <div class="team-photo">
+                        <img src="images/maureen.jpeg" alt="" srcset="">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Maureen Olamma Ogbonnaya, ESQ</h3>
+                        <p class="team-position">Principal Partner</p>
+                        <p class="team-bio">
+                            With over 20 years of experience in corporate law and business advisory, Adebayo leads 
+                            our firm with a vision for excellence and innovation. He has successfully advised numerous 
+                            multinational corporations and startups on complex transactions.
+                        </p>
+                        <div class="team-specialties">
+                            <p class="specialty-label">Specialties</p>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">Corporate Law</span>
+                                <span class="specialty-tag">M&A</span>
+                                <span class="specialty-tag">Business Advisory</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Senior Partner -->
+                <div class="team-member animate-fade-up delay-1">
+                    <div class="team-photo">
+                           <img src="images/lawyer 1.jpeg" alt="" srcset="">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Eke Oke Eke</h3>
+                        <p class="team-position">Librarian/ Data Analyst</p>
+                        <p class="team-bio">
+                       Eke Oke Eke specializes in legal research, knowledge management, and data analysis, 
+                       supporting the firm’s legal and strategic operations. He provides data-driven insights that 
+                       enhance decision-making, streamline legal workflows, 
+                       and ensure efficient access to legal resources across the firm.
+                        </p>
+                        <div class="team-specialties">
+                            <p class="specialty-label">Specialties</p>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">Tax Law</span>
+                                <span class="specialty-tag">Compliance</span>
+                                <span class="specialty-tag">Transfer Pricing</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Senior Partner -->
+                <div class="team-member animate-fade-up delay-2">
+                    <div class="team-photo">
+                       <img src="images/lawyer2.jpeg" alt="" srcset="">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Elizabeth Oka</h3>
+                        <p class="team-position">Senior Associate</p>
+                        <p class="team-bio">
+                         Elizabeth Oka is a seasoned legal practitioner with expertise in corporate governance, litigation, and legal advisory services. With several years at the Bar, 
+                         she has advised businesses on regulatory compliance, served as Company Secretary, and successfully represented clients in a wide range of legal disputes.
+                        </p>
+                        <div class="team-specialties">
+                            <p class="specialty-label">Specialties</p>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">Litigation</span>
+                                <span class="specialty-tag">Arbitration</span>
+                                <span class="specialty-tag">Dispute Resolution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- advisor -->
+                              <div class="team-member animate-fade-up delay-2">
+                    <div class="team-photo">
+                       <img src="images/lwayer3.jpeg" alt="" srcset="">
+                    </div>
+                    <div class="team-info">
+                        <h3 class="team-name">Professor Bode Ayorinde</h3>
+                        <p class="team-position">Advisor</p>
+                        <p class="team-bio">
+            Professor ‘Bode Ayorinde is a distinguished legal practitioner, academic, and public policy expert with extensive experience in legal practice, corporate and business law, and governance. With decades of experience at the Bar and in academia, 
+            he has held senior academic leadership roles, served in the National Assembly, and provides strategic legal and governance advisory services to institutions and businesses.
+                        </p>
+                        <div class="team-specialties">
+                            <p class="specialty-label">Specialties</p>
+                            <div class="specialty-tags">
+                                <span class="specialty-tag">Litigation</span>
+                                <span class="specialty-tag">Arbitration</span>
+                                <span class="specialty-tag">Dispute Resolution</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider">
+        <div class="container">
+            <div class="divider-line"></div>
+        </div>
+    </div>
+
+
+
+    <!-- Team Values -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title animate-fade-up">What Drives Us</h2>
+                <p class="section-subtitle animate-fade-up delay-1">The core values that guide our team</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card animate-fade-up">
+                    <div class="value-icon">
+                        <svg width="36" height="36" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Continuous Learning</h3>
+                    <p class="value-text">
+                        We invest in ongoing professional development to stay ahead of legal trends and provide 
+                        cutting-edge advice to our clients.
+                    </p>
+                </div>
+                
+                <div class="value-card animate-fade-up delay-1">
+                    <div class="value-icon">
+                        <svg width="36" height="36" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Collaborative Approach</h3>
+                    <p class="value-text">
+                        Our team works seamlessly together, combining diverse expertise to deliver comprehensive 
+                        solutions for complex legal challenges.
+                    </p>
+                </div>
+                
+                <div class="value-card animate-fade-up delay-2">
+                    <div class="value-icon">
+                        <svg width="36" height="36" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Client Commitment</h3>
+                    <p class="value-text">
+                        Every team member is dedicated to understanding your unique needs and delivering 
+                        personalized legal solutions that exceed expectations.
+                    </p>
+                </div>
+                
+                <div class="value-card animate-fade-up delay-3">
+                    <div class="value-icon">
+                        <svg width="36" height="36" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                        </svg>
+                    </div>
+                    <h3 class="value-title">Results-Driven</h3>
+                    <p class="value-text">
+                        We measure our success by the positive outcomes we achieve for our clients, whether in 
+                        negotiations, transactions, or litigation.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-light cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2 class="section-title animate-fade-up">Work With Our Team</h2>
+                <p class="section-subtitle animate-fade-up delay-1">
+                    Our experienced professionals are ready to help you navigate your legal challenges with 
+                    confidence and expertise.
+                </p>
+                <div class="cta-buttons animate-fade-up delay-2">
+                    <a href="/contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                    <a href="/practice-areas.html" class="btn btn-outline">View Our Services</a>
+                </div>
+                <p class="cta-phone animate-fade-up delay-3">
+                    Call us at <a href="tel:+2347060609806">+234 706 060 9806</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">MAURLEX & CO.</div>
+                    <p class="footer-description">
+                        Expert legal and business solutions for individuals, startups, and businesses. 
+                        Strategic guidance you can trust.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/maurlex-and-co-7635483a2" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/23407060609806" target="_blank" class="social-link" aria-label="WhatsApp">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:maurlexandco@gmail.com" class="social-link" aria-label="Email">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/practice-areas.html">Practice Areas</a></li>
+                        <li><a href="/team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/practice-areas/corporate-commercial.html">Corporate Law</a></li>
+                        <li><a href="/practice-areas/litigation.html">Litigation</a></li>
+                        <li><a href="/practice-areas/real-estate.html">Real Estate</a></li>
+                        <li><a href="/practice-areas/tax-advisory.html">Tax Advisory</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            No. 23 Kubwa shopping Mall, Hamza Abdullahi Street Kubwa FCT Abuja
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            +234 706 060 9806
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            maurlexandco@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Valid Point Solutions.  All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/23407060609806" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contact us on WhatsApp">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

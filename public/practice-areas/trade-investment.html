@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Trade and Investment Advisory. Maurlex & Co. provides strategic counsel on international trade and investment opportunities.">
+    <title>Trade & Investment Advisory - Maurlex & Co.</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <style>
+        .practice-content-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 60px; margin-top: 60px; }
+        .practice-main-content { background: var(--white); padding: 50px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); }
+        .content-section { margin-bottom: 50px; }
+        .content-section h2 { font-size: 28px; margin-bottom: 20px; color: var(--black); }
+        .content-section h3 { font-size: 22px; margin-bottom: 15px; margin-top: 25px; color: var(--black); }
+        .content-section p { font-size: 16px; line-height: 1.8; color: var(--grey); margin-bottom: 20px; }
+        .content-list { list-style: none; margin: 25px 0; }
+        .content-list li { padding: 15px 0 15px 40px; position: relative; font-size: 16px; line-height: 1.7; color: var(--grey); border-bottom: 1px solid var(--grey-light); }
+        .content-list li:last-child { border-bottom: none; }
+        .content-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-weight: 700; font-size: 20px; }
+        .practice-sidebar { position: sticky; top: 120px; }
+        .sidebar-card { background: var(--white); padding: 35px 30px; border-radius: 8px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); margin-bottom: 30px; }
+        .sidebar-title { font-size: 20px; margin-bottom: 20px; color: var(--black); }
+        .sidebar-list { list-style: none; }
+        .sidebar-list li { margin-bottom: 12px; }
+        .sidebar-list a { color: var(--grey); font-size: 15px; display: flex; align-items: center; gap: 10px; transition: all 0.3s ease; padding: 10px; border-radius: 4px; }
+        .sidebar-list a:hover { color: var(--gold); background: rgba(212, 175, 55, 0.1); padding-left: 15px; }
+        .cta-card { background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%); padding: 40px 30px; border-radius: 8px; color: var(--white); text-align: center; }
+        .cta-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--white); }
+        .cta-card p { font-size: 15px; margin-bottom: 25px; color: rgba(255, 255, 255, 0.8); }
+        .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin: 30px 0; }
+        .benefit-item { background: var(--grey-bg); padding: 25px; border-radius: 8px; transition: all 0.3s ease; }
+        .benefit-item:hover { background: rgba(212, 175, 55, 0.1); transform: translateY(-5px); }
+        .benefit-icon { width: 50px; height: 50px; background: rgba(212, 175, 55, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold); margin-bottom: 15px; }
+        .benefit-title { font-size: 18px; margin-bottom: 10px; color: var(--black); }
+        .benefit-text { font-size: 14px; line-height: 1.6; color: var(--grey); }
+        @media (max-width: 1024px) { .practice-content-grid { grid-template-columns: 1fr; gap: 40px; } .practice-sidebar { position: static; } .benefits-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 768px) { .practice-main-content { padding: 35px 25px; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="logo">MAURLEX & CO.</a>
+                <div class="nav-menu" id="navMenu">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <a href="/practice-areas.html" class="nav-link active">Practice Areas</a>
+                    <a href="/team.html" class="nav-link">Team</a>
+                    <a href="/articles.html" class="nav-link">Articles</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+                <button class="mobile-menu-toggle" id="mobileMenuToggle"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <div class="breadcrumb animate-fade-up">
+                    <a href="/">Home</a><span>›</span><a href="/practice-areas.html">Practice Areas</a><span>›</span><span>Trade & Investment Advisory</span>
+                </div>
+                <h1 class="page-title animate-fade-up delay-1">Trade & Investment Advisory</h1>
+                <p class="page-subtitle animate-fade-up delay-2">Strategic counsel on international trade and investment opportunities</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <div class="practice-content-grid">
+                <div class="practice-main-content animate-slide-left">
+                    <div class="content-section">
+                        <h2>Overview</h2>
+                        <p>Our trade and investment advisory practice helps businesses and investors navigate the complexities of international commerce and cross-border investments. We provide strategic legal counsel to maximize opportunities while managing regulatory and commercial risks.</p>
+                        <p>With expertise in Nigerian investment laws, international trade regulations, and cross-border transactions, we serve both foreign investors entering Nigeria and Nigerian businesses expanding internationally.</p>
+                    </div>
+                    
+                    <div class="content-section">
+                        <h2>Our Services</h2>
+                        
+                        <h3>Foreign Direct Investment</h3>
+                        <ul class="content-list">
+                            <li>Investment structuring and planning</li>
+                            <li>Market entry strategy and legal framework</li>
+                            <li>Investment permits and approvals</li>
+                            <li>Joint venture agreements</li>
+                            <li>Shareholder and investor agreements</li>
+                            <li>Investment protection and treaties</li>
+                        </ul>
+                        
+                        <h3>International Trade</h3>
+                        <ul class="content-list">
+                            <li>Import and export regulations</li>
+                            <li>Trade finance documentation</li>
+                            <li>Customs compliance and tariff classification</li>
+                            <li>Letters of credit and payment terms</li>
+                            <li>International sales contracts</li>
+                            <li>Trade dispute resolution</li>
+                        </ul>
+                        
+                        <h3>Cross-Border Transactions</h3>
+                        <ul class="content-list">
+                            <li>Mergers and acquisitions</li>
+                            <li>Cross-border joint ventures</li>
+                            <li>International distribution agreements</li>
+                            <li>Franchise and licensing arrangements</li>
+                            <li>Technology transfer agreements</li>
+                            <li>Supply chain contracts</li>
+                        </ul>
+                        
+                        <h3>Investment Incentives & Promotion</h3>
+                        <ul class="content-list">
+                            <li>Pioneer status applications</li>
+                            <li>Free trade zone benefits</li>
+                            <li>Investment tax credits and incentives</li>
+                            <li>Special economic zone opportunities</li>
+                            <li>Export processing zone benefits</li>
+                        </ul>
+                        
+                        <h3>Regulatory Compliance</h3>
+                        <ul class="content-list">
+                            <li>Nigerian Investment Promotion Commission (NIPC) registration</li>
+                            <li>Foreign exchange compliance</li>
+                            <li>Repatriation of capital and profits</li>
+                            <li>Local content requirements</li>
+                            <li>Transfer pricing compliance</li>
+                            <li>Anti-money laundering compliance</li>
+                        </ul>
+                        
+                        <h3>Trade Agreements & Treaties</h3>
+                        <ul class="content-list">
+                            <li>Bilateral investment treaties (BITs)</li>
+                            <li>AfCFTA implementation and compliance</li>
+                            <li>ECOWAS trade protocols</li>
+                            <li>WTO compliance</li>
+                            <li>Double taxation agreements</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-section">
+                        <h2>Why Choose Us</h2>
+                        <div class="benefits-grid">
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="benefit-title">Global Perspective</h4>
+                                <p class="benefit-text">Understanding of both Nigerian and international business environments.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="benefit-title">Regulatory Expertise</h4>
+                                <p class="benefit-text">Deep knowledge of Nigerian investment and trade regulations.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="benefit-title">Deal Structuring</h4>
+                                <p class="benefit-text">Creative solutions that optimize tax and regulatory outcomes.</p>
+                            </div>
+                            <div class="benefit-item">
+                                <div class="benefit-icon">
+                                    <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                </div>
+                                <h4 class="benefit-title">Network & Connections</h4>
+                                <p class="benefit-text">Strong relationships with regulatory authorities and business partners.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-section">
+                        <h2>Investment Sectors We Serve</h2>
+                        <p>We advise investors across key Nigerian sectors:</p>
+                        <ul class="content-list">
+                            <li>Oil and gas exploration and production</li>
+                            <li>Renewable energy and power generation</li>
+                            <li>Telecommunications and ICT</li>
+                            <li>Manufacturing and industrials</li>
+                            <li>Agriculture and agribusiness</li>
+                            <li>Real estate and infrastructure</li>
+                            <li>Financial services and fintech</li>
+                            <li>Mining and natural resources</li>
+                            <li>Healthcare and pharmaceuticals</li>
+                            <li>Hospitality and tourism</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="content-section">
+                        <h2>Key Investment Considerations</h2>
+                        <p>We help clients navigate critical investment issues:</p>
+                        <ul class="content-list">
+                            <li>Foreign ownership restrictions and local content requirements</li>
+                            <li>Currency controls and repatriation of funds</li>
+                            <li>Pioneer status and tax incentives</li>
+                            <li>Land acquisition and property rights</li>
+                            <li>Employment and immigration requirements</li>
+                            <li>Intellectual property protection</li>
+                            <li>Dispute resolution and arbitration</li>
+                            <li>Political and regulatory risks</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <aside class="practice-sidebar">
+                    <div class="sidebar-card animate-slide-right">
+                        <h3 class="sidebar-title">Related Services</h3>
+                        <ul class="sidebar-list">
+                            <li><a href="/practice-areas/corporate-commercial.html"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Corporate Law</a></li>
+                            <li><a href="/practice-areas/tax-advisory.html"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Tax Advisory</a></li>
+                            <li><a href="/practice-areas/regulatory-compliance.html"><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>Regulatory Compliance</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="cta-card animate-slide-right delay-1">
+                        <h3>Investment Opportunity?</h3>
+                        <p>Our trade and investment experts are ready to help you navigate Nigerian markets.</p>
+                        <a href="/contact.html" class="btn btn-primary btn-block">Schedule Consultation</a>
+                        <p style="margin-top: 20px; font-size: 14px;">Or call us at<br><a href="tel:+23407060609806" style="color: var(--gold); font-weight: 600;">+234 706 060 9806</a></p>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2 class="section-title animate-fade-up">Expand Your Business Globally</h2>
+                <p class="section-subtitle animate-fade-up delay-1">Contact us today for expert trade and investment advisory services.</p>
+                <div class="cta-buttons animate-fade-up delay-2">
+                    <a href="/contact.html" class="btn btn-primary">Schedule Consultation</a>
+                    <a href="/practice-areas.html" class="btn btn-outline-light">View All Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">MAURLEX & CO.</div>
+                    <p class="footer-description">Expert legal and business solutions for individuals, startups, and businesses. Strategic guidance you can trust.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/maurlex-and-co-7635483a2" target="_blank" class="social-link" aria-label="LinkedIn"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                        <a href="https://wa.me/23407060609806" target="_blank" class="social-link" aria-label="WhatsApp"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
+                        <a href="mailto:maurlexandco@gmail.com" class="social-link" aria-label="Email"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/practice-areas.html">Practice Areas</a></li>
+                        <li><a href="/team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/practice-areas/corporate-commercial.html">Corporate Law</a></li>
+                        <li><a href="/practice-areas/litigation.html">Litigation</a></li>
+                        <li><a href="/practice-areas/real-estate.html">Real Estate</a></li>
+                        <li><a href="/practice-areas/tax-advisory.html">Tax Advisory</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>No. 23 Kubwa shopping Mall, Hamza Abdullahi Street Kubwa FCT Abuja</li>
+                        <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>+234 706 060 9806</li>
+                        <li><svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>maurlexandco@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Valid Point Solutions.  All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/23407060609806" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

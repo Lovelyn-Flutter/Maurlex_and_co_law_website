@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Maurlex & Co. legal services in Abuja: Corporate law, litigation, tax advisory, real estate, regulatory compliance, family law, immigration and more. Expert lawyers in Nigeria.">
+    <meta name="keywords" content="legal services Abuja, corporate lawyer Nigeria, tax lawyer, real estate lawyer, litigation services, family law Abuja, immigration lawyer Nigeria">
+    <meta name="author" content="Maurlex & Co.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.maurlexandco.com/practice-areas.html">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Legal Services - Maurlex & Co. | Law Firm in Abuja, Nigeria">
+    <meta property="og:description" content="Comprehensive legal services: Corporate law, litigation, tax advisory, real estate, regulatory compliance and more.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.maurlexandco.com/practice-areas.html">
+    <meta property="og:image" content="https://www.maurlexandco.com/images/team-image.jpeg">
+    <meta property="og:site_name" content="Maurlex & Co.">
+    <meta property="og:locale" content="en_NG">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Legal Services - Maurlex & Co.">
+    <meta name="twitter:description" content="Expert legal services across Nigeria.">
+    <meta name="twitter:image" content="https://www.maurlexandco.com/images/team-image.jpeg">
+    
+    <title>Practice Areas - Maurlex & Co. | Legal Services in Abuja, Nigeria</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+        <style>
+        /* Additional styles for practice areas page */
+        .practice-areas-intro {
+            max-width: 800px;
+            margin: 0 auto 80px;
+        }
+        
+        .practice-areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+        
+        .practice-area-card {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 2px solid transparent;
+        }
+        
+        .practice-area-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--gold);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.2);
+        }
+        
+        .practice-area-header {
+            padding: 40px 30px 30px;
+            background: linear-gradient(135deg, var(--black) 0%, var(--black-light) 100%);
+            text-align: center;
+        }
+        
+        .practice-area-icon-large {
+            font-size: 56px;
+            margin-bottom: 20px;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .practice-area-card:hover .practice-area-icon-large {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+        
+        .practice-area-title {
+            font-size: 24px;
+            margin-bottom: 0;
+            color: var(--white);
+        }
+        
+        .practice-area-description {
+            padding: 30px;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--grey);
+            flex: 1;
+        }
+        
+        .practice-area-footer {
+            padding: 0 30px 30px;
+        }
+        
+        .practice-area-link {
+            color: var(--gold);
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .practice-area-card:hover .practice-area-link {
+            transform: translateX(5px);
+        }
+        
+        .service-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+            margin-top: 60px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-5px);
+        }
+        
+        .benefit-number {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--gold);
+            font-family: var(--font-heading);
+            margin-bottom: 15px;
+            line-height: 1;
+        }
+        
+        .benefit-title {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--white);
+        }
+        
+        .benefit-text {
+            font-size: 15px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-top: 60px;
+        }
+        
+        .industry-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--gold);
+        }
+        
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+        
+        .industry-name {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--black);
+        }
+        
+        .industry-desc {
+            font-size: 14px;
+            color: var(--grey);
+            line-height: 1.6;
+        }
+        
+        @media (max-width: 768px) {
+            .practice-areas-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="logo">MAURLEX & CO.</a>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <a href="/practice-areas.html" class="nav-link active">Practice Areas</a>
+                    <a href="/team.html" class="nav-link">Team</a>
+                    <a href="/articles.html" class="nav-link">Articles</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="page-hero-content">
+                <h1 class="page-title animate-fade-up">Our Practice Areas</h1>
+                <p class="page-subtitle animate-fade-up delay-1">Comprehensive legal solutions across multiple domains</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas Grid -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="practice-areas-intro text-center">
+                <p class="section-text" style="font-size: 1.1rem;">
+                    At Maurlex & Co., we offer a comprehensive range of legal services designed to meet the diverse 
+                    needs of individuals, startups, and established businesses. Our experienced team provides strategic 
+                    guidance and practical solutions across all areas of law.
+                </p>
+            </div>
+            
+            <div class="practice-areas-grid">
+                <!-- Corporate & Commercial -->
+                <a href="/practice-areas/corporate-commercial.html" class="practice-area-card animate-fade-up">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">🏢</div>
+                        <h3 class="practice-area-title">Corporate & Commercial</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Strategic legal guidance for businesses navigating complex corporate transactions and commercial agreements. 
+                        We advise on mergers, acquisitions, joint ventures, and shareholder matters.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Tax Advisory -->
+                <a href="/practice-areas/tax-advisory.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.05s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">💰</div>
+                        <h3 class="practice-area-title">Tax Advisory</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Expert tax planning and compliance services to optimize your financial position. 
+                        We provide strategic advice on tax structures, VAT, transfer pricing, and tax disputes.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- General Legal Services -->
+                <a href="/practice-areas/general-legal.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.1s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">⚖️</div>
+                        <h3 class="practice-area-title">General Legal Services</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Comprehensive legal support for individuals and businesses across diverse matters including 
+                        contract drafting, debt recovery, employment law, and general business advisory.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Regulatory Compliance -->
+                <a href="/practice-areas/regulatory-compliance.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.15s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">🛡️</div>
+                        <h3 class="practice-area-title">Regulatory Compliance</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Ensuring your business meets all regulatory requirements and industry standards. 
+                        We provide compliance audits, policy development, and ongoing monitoring services.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Real Estate Advisory -->
+                <a href="/practice-areas/real-estate.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.2s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">🏠</div>
+                        <h3 class="practice-area-title">Real Estate Advisory</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Expert guidance on property transactions, leasing, and real estate development. 
+                        We handle acquisitions, disposals, title verification, and property finance.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Immigration Advisory -->
+                <a href="/practice-areas/immigration.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.25s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">✈️</div>
+                        <h3 class="practice-area-title">Immigration Advisory</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Comprehensive immigration solutions for individuals and corporate clients including 
+                        work permits, residency applications, and citizenship matters.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Data Protection Audits -->
+                <a href="/practice-areas/data-protection.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.3s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">🔒</div>
+                        <h3 class="practice-area-title">Data Protection Audits</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Thorough audits to ensure compliance with data protection regulations including NDPR and GDPR. 
+                        We develop privacy policies and provide data breach response services.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Professional Training -->
+                <a href="/practice-areas/training.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.35s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">📚</div>
+                        <h3 class="practice-area-title">Professional Training</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Specialized legal training programs for professionals and organizations covering contract management, 
+                        compliance, corporate governance, and more.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Alternative Dispute Resolution -->
+                <a href="/practice-areas/adr.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.4s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">🤝</div>
+                        <h3 class="practice-area-title">Alternative Dispute Resolution</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Efficient conflict resolution through mediation and arbitration. 
+                        We help parties resolve disputes cost-effectively and confidentially.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Family Court Proceedings -->
+                <a href="/practice-areas/family-court.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.45s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">👨‍👩‍👧</div>
+                        <h3 class="practice-area-title">Family Court Proceedings</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Compassionate legal representation in family law matters including divorce, child custody, 
+                        adoption, guardianship, and matrimonial property disputes.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Litigation -->
+                <a href="/practice-areas/litigation.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.5s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">⚖️</div>
+                        <h3 class="practice-area-title">Litigation</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Aggressive representation in court to protect your interests. 
+                        We handle commercial disputes, employment tribunals, land matters, and civil litigation.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+
+                <!-- Trade & Investment Advisory -->
+                <a href="/practice-areas/trade-investment.html" class="practice-area-card animate-fade-up" style="animation-delay: 0.55s">
+                    <div class="practice-area-header">
+                        <div class="practice-area-icon-large">📈</div>
+                        <h3 class="practice-area-title">Trade & Investment Advisory</h3>
+                    </div>
+                    <p class="practice-area-description">
+                        Strategic counsel on international trade and investment opportunities including cross-border 
+                        transactions, foreign direct investment, and trade agreements.
+                    </p>
+                    <div class="practice-area-footer">
+                        <span class="practice-area-link">Learn More →</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Our Services -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Why Choose Our Services</h2>
+                <p class="section-subtitle">Excellence in every engagement</p>
+            </div>
+            
+            <div class="service-benefits-grid">
+                <div class="benefit-card animate-fade-up">
+                    <div class="benefit-number">01</div>
+                    <h3 class="benefit-title">Tailored Solutions</h3>
+                    <p class="benefit-text">
+                        We understand that every client is unique. Our approach is customized to address your specific 
+                        legal needs and business objectives.
+                    </p>
+                </div>
+                
+                <div class="benefit-card animate-fade-up delay-1">
+                    <div class="benefit-number">02</div>
+                    <h3 class="benefit-title">Expert Team</h3>
+                    <p class="benefit-text">
+                        Our lawyers bring decades of combined experience across diverse practice areas, ensuring you 
+                        receive top-tier legal counsel.
+                    </p>
+                </div>
+                
+                <div class="benefit-card animate-fade-up delay-2">
+                    <div class="benefit-number">03</div>
+                    <h3 class="benefit-title">Proven Track Record</h3>
+                    <p class="benefit-text">
+                        With over 200 successful cases and a 98% client satisfaction rate, our results speak for themselves.
+                    </p>
+                </div>
+                
+                <div class="benefit-card animate-fade-up delay-3">
+                    <div class="benefit-number">04</div>
+                    <h3 class="benefit-title">Strategic Partnership</h3>
+                    <p class="benefit-text">
+                        We don't just provide legal services – we become your trusted partner, invested in your long-term success.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Focus -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Industries We Serve</h2>
+                <p class="section-subtitle">Specialized expertise across key sectors</p>
+            </div>
+            
+            <div class="industries-grid">
+                <div class="industry-card animate-fade-up">
+                    <h4 class="industry-name">Financial Services</h4>
+                    <p class="industry-desc">Banks, fintech, insurance, and investment firms</p>
+                </div>
+                <div class="industry-card animate-fade-up delay-1">
+                    <h4 class="industry-name">Technology & Startups</h4>
+                    <p class="industry-desc">Software, e-commerce, and digital platforms</p>
+                </div>
+                <div class="industry-card animate-fade-up delay-2">
+                    <h4 class="industry-name">Real Estate & Construction</h4>
+                    <p class="industry-desc">Developers, contractors, and property investors</p>
+                </div>
+                <div class="industry-card animate-fade-up delay-3">
+                    <h4 class="industry-name">Healthcare</h4>
+                    <p class="industry-desc">Hospitals, clinics, and pharmaceutical companies</p>
+                </div>
+                <div class="industry-card animate-fade-up">
+                    <h4 class="industry-name">Energy & Resources</h4>
+                    <p class="industry-desc">Oil & gas, renewable energy, and mining</p>
+                </div>
+                <div class="industry-card animate-fade-up delay-1">
+                    <h4 class="industry-name">Retail & Consumer Goods</h4>
+                    <p class="industry-desc">Manufacturers, distributors, and retailers</p>
+                </div>
+                <div class="industry-card animate-fade-up delay-2">
+                    <h4 class="industry-name">Manufacturing</h4>
+                    <p class="industry-desc">Industrial production and supply chains</p>
+                </div>
+                <div class="industry-card animate-fade-up delay-3">
+                    <h4 class="industry-name">Media & Entertainment</h4>
+                    <p class="industry-desc">Broadcasting, publishing, and content creators</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section section-dark cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2 class="section-title animate-fade-up">Need Legal Assistance?</h2>
+                <p class="section-subtitle animate-fade-up delay-1">
+                    Our team is ready to help you navigate your legal challenges with confidence and expertise.
+                </p>
+                <div class="cta-buttons animate-fade-up delay-2">
+                    <a href="/contact.html" class="btn btn-primary">Schedule a Consultation</a>
+                    <a href="/team.html" class="btn btn-outline-light">Meet Our Team</a>
+                </div>
+                <p class="cta-phone animate-fade-up delay-3">
+                    Call us at <a href="tel:+2347060609806">+234 706 060 9806</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+  <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">MAURLEX & CO.</div>
+                    <p class="footer-description">
+                        Expert legal and business solutions for individuals, startups, and businesses. 
+                        Strategic guidance you can trust.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/maurlex-and-co-7635483a2" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/23407060609806" target="_blank" class="social-link" aria-label="WhatsApp">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:maurlexandco@gmail.com" class="social-link" aria-label="Email">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/practice-areas.html">Practice Areas</a></li>
+                        <li><a href="/team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/practice-areas/corporate-commercial.html">Corporate Law</a></li>
+                        <li><a href="/practice-areas/litigation.html">Litigation</a></li>
+                        <li><a href="/practice-areas/real-estate.html">Real Estate</a></li>
+                        <li><a href="/practice-areas/tax-advisory.html">Tax Advisory</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            No. 23 Kubwa shopping Mall, Hamza Abdullahi Street Kubwa FCT Abuja
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            +234 706 060 9806
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            maurlexandco@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Valid Point Solutions.  All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/23407060609806" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contact us on WhatsApp">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>

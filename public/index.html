@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Maurlex & Co. - Leading law firm in Abuja, Nigeria. Expert legal services in corporate law, litigation, tax advisory, real estate. Call +234 706 060 9806 for consultation.">
+    <meta name="keywords" content="law firm Abuja, lawyers Nigeria, corporate lawyer Abuja, tax lawyer Nigeria, real estate lawyer, litigation services, legal services Nigeria, Maurlex law firm">
+    <meta name="author" content="Maurlex & Co.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.maurlexandco.com/">
+    
+    <!-- Open Graph Meta Tags (Social Media) -->
+    <meta property="og:title" content="Maurlex & Co. | Top Law Firm in Abuja, Nigeria">
+    <meta property="og:description" content="Expert legal and business solutions for individuals, startups, and businesses. Strategic guidance you can trust.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.maurlexandco.com/">
+    <meta property="og:image" content="https://www.maurlexandco.com/images/team-image.jpeg">
+    <meta property="og:site_name" content="Maurlex & Co.">
+    <meta property="og:locale" content="en_NG">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Maurlex & Co. | Top Law Firm in Abuja, Nigeria">
+    <meta name="twitter:description" content="Expert legal services in corporate law, litigation, tax advisory, and more.">
+    <meta name="twitter:image" content="https://www.maurlexandco.com/images/team-image.jpeg">
+    
+    <!-- Title -->
+    <title>Maurlex & Co. | Top Law Firm in Abuja, Nigeria - Legal Services & Business Advisory</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+<style>
+/* Animated Geometric Lines Background - ENHANCED VISIBILITY */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Canvas for animated lines */
+.geometric-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+}
+
+/* Individual diamond/line elements - MUCH MORE VISIBLE */
+.geo-line {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(212, 175, 55, 0.6); /* INCREASED from 0.2 to 0.6 */
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.3); /* Added glow */
+    transform: rotate(45deg);
+    animation: float 20s infinite ease-in-out;
+}
+
+.geo-line:nth-child(1) {
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+    animation-duration: 25s;
+    border-color: rgba(212, 175, 55, 0.7); /* Brighter gold */
+}
+
+.geo-line:nth-child(2) {
+    top: 60%;
+    left: 15%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 3s;
+    animation-duration: 20s;
+    border-color: rgba(255, 255, 255, 0.4); /* INCREASED from 0.1 to 0.4 */
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.geo-line:nth-child(3) {
+    top: 30%;
+    right: 10%;
+    width: 250px;
+    height: 250px;
+    animation-delay: 1.5s;
+    animation-duration: 30s;
+    border-color: rgba(212, 175, 55, 0.5);
+}
+
+.geo-line:nth-child(4) {
+    bottom: 15%;
+    right: 20%;
+    width: 180px;
+    height: 180px;
+    animation-delay: 5s;
+    animation-duration: 22s;
+    border-color: rgba(212, 175, 55, 0.65);
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+}
+
+.geo-line:nth-child(5) {
+    top: 50%;
+    left: 40%;
+    width: 120px;
+    height: 120px;
+    animation-delay: 2s;
+    animation-duration: 28s;
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+/* Connecting lines - MORE VISIBLE */
+.geo-connector {
+    position: absolute;
+    height: 2px; /* INCREASED from 1px to 2px */
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(212, 175, 55, 0.7), /* INCREASED from 0.3 to 0.7 */
+        transparent
+    );
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5); /* Added glow */
+    animation: pulse 4s infinite ease-in-out;
+}
+
+.geo-connector:nth-child(6) {
+    top: 25%;
+    left: 20%;
+    width: 150px;
+    transform: rotate(30deg);
+    animation-delay: 1s;
+}
+
+.geo-connector:nth-child(7) {
+    top: 70%;
+    right: 25%;
+    width: 200px;
+    transform: rotate(-45deg);
+    animation-delay: 2.5s;
+}
+
+.geo-connector:nth-child(8) {
+    bottom: 30%;
+    left: 35%;
+    width: 180px;
+    transform: rotate(60deg);
+    animation-delay: 0.5s;
+}
+
+/* Additional connectors for more visibility */
+.geo-connector:nth-child(12) {
+    top: 40%;
+    left: 10%;
+    width: 220px;
+    transform: rotate(15deg);
+    animation-delay: 3.5s;
+}
+
+.geo-connector:nth-child(13) {
+    bottom: 20%;
+    right: 15%;
+    width: 190px;
+    transform: rotate(-30deg);
+    animation-delay: 4s;
+}
+
+/* Floating animation - MORE VISIBLE */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0) rotate(45deg);
+        opacity: 0.7; /* INCREASED from 0.4 to 0.7 */
+    }
+    25% {
+        transform: translate(20px, -30px) rotate(50deg);
+        opacity: 0.9; /* INCREASED from 0.6 to 0.9 */
+    }
+    50% {
+        transform: translate(-15px, 20px) rotate(40deg);
+        opacity: 0.6; /* INCREASED from 0.3 to 0.6 */
+    }
+    75% {
+        transform: translate(30px, 10px) rotate(55deg);
+        opacity: 0.8; /* INCREASED from 0.5 to 0.8 */
+    }
+}
+
+/* Pulse animation - STRONGER */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5; /* INCREASED from 0.2 to 0.5 */
+        transform: scaleX(1);
+    }
+    50% {
+        opacity: 0.9; /* INCREASED from 0.5 to 0.9 */
+        transform: scaleX(1.2);
+    }
+}
+
+/* Particles - MUCH MORE VISIBLE */
+.particle {
+    position: absolute;
+    width: 6px; /* INCREASED from 4px to 6px */
+    height: 6px;
+    background: rgba(212, 175, 55, 0.9); /* INCREASED from 0.6 to 0.9 */
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.8); /* Added strong glow */
+    animation: particle-float 15s infinite ease-in-out;
+}
+
+.particle:nth-child(9) {
+    top: 20%;
+    left: 30%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(10) {
+    top: 60%;
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.particle:nth-child(11) {
+    bottom: 25%;
+    right: 15%;
+    animation-delay: 1.5s;
+}
+
+/* Add more particles */
+.particle:nth-child(14) {
+    top: 45%;
+    left: 50%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(15) {
+    top: 15%;
+    right: 25%;
+    animation-delay: 4s;
+}
+
+@keyframes particle-float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.6; /* INCREASED from 0.3 to 0.6 */
+    }
+    50% {
+        transform: translateY(-50px) translateX(30px);
+        opacity: 1; /* INCREASED from 0.8 to 1 */
+    }
+}
+
+/* Add grid pattern overlay for extra effect */
+.geometric-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 100px,
+            rgba(212, 175, 55, 0.1) 100px,
+            rgba(212, 175, 55, 0.1) 101px
+        ),
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 100px,
+            rgba(212, 175, 55, 0.1) 100px,
+            rgba(212, 175, 55, 0.1) 101px
+        );
+    opacity: 0.5;
+    animation: grid-move 40s linear infinite;
+}
+
+@keyframes grid-move {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(50px, 50px);
+    }
+}
+
+/* Ensure hero content stays on top */
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-overlay {
+    z-index: 1;
+    /* Reduce overlay opacity slightly so animation shows through */
+    background: linear-gradient(rgba(13, 13, 13, 0.6), rgba(13, 13, 13, 0.6)) !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .geo-line {
+        width: 120px;
+        height: 120px;
+        border-width: 1.5px;
+    }
+    
+    .geo-connector {
+        width: 80px;
+    }
+}
+</style>
+    
+    <!-- Google Analytics - Replace G-XXXXXXXXXX with your tracking ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
+    <!-- Schema.org Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LegalService",
+      "name": "Maurlex & Co.",
+      "image": "https://www.maurlexandco.com/images/team-image.jpeg",
+      "@id": "https://www.maurlexandco.com",
+      "url": "https://www.maurlexandco.com",
+      "telephone": "+2347060609806",
+      "email": "maurlexandco@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "No. 23 Kubwa shopping Mall, Hamza Abdullahi Street Kubwa",
+        "addressLocality": "Abuja",
+        "addressRegion": "FCT",
+        "postalCode": "",
+        "addressCountry": "NG"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "9.0765",
+        "longitude": "7.4165"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "09:00",
+        "closes": "17:00"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/maurlex-and-co-7635483a2"
+      ],
+      "priceRange": "$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Nigeria"
+      },
+      "serviceType": [
+        "Corporate Law",
+        "Tax Advisory",
+        "Litigation",
+        "Real Estate Law",
+        "Regulatory Compliance",
+        "Immigration Law",
+        "Family Law"
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Attorney",
+      "name": "Maurlex & Co.",
+      "description": "Leading law firm providing comprehensive legal and business advisory services in Nigeria",
+      "url": "https://www.maurlexandco.com",
+      "logo": "https://www.maurlexandco.com/images/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+234-706-060-9806",
+        "contactType": "Customer Service",
+        "areaServed": "NG",
+        "availableLanguage": "en"
+      }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="/" class="logo">MAURLEX & CO.</a>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/about.html" class="nav-link">About</a>
+                    <a href="/practice-areas.html" class="nav-link">Practice Areas</a>
+                    <a href="/team.html" class="nav-link">Team</a>
+                    <a href="/articles.html" class="nav-link">Articles</a>
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+<section class="hero">
+    <!-- Animated Geometric Background - ENHANCED -->
+    <div class="geometric-bg">
+        <!-- Diamond shapes -->
+        <div class="geo-line"></div>
+        <div class="geo-line"></div>
+        <div class="geo-line"></div>
+        <div class="geo-line"></div>
+        <div class="geo-line"></div>
+        
+        <!-- Connecting lines -->
+        <div class="geo-connector"></div>
+        <div class="geo-connector"></div>
+        <div class="geo-connector"></div>
+        <div class="geo-connector"></div>
+        <div class="geo-connector"></div>
+        
+        <!-- Glowing particles -->
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+    
+    <div class="hero-overlay"></div>
+    
+    <div class="hero-content container">
+        <h1 class="hero-title animate-fade-up">Expert Legal & Business Solutions You Can Trust</h1>
+        <p class="hero-subtitle animate-fade-up delay-1">Strategic guidance for individuals, startups, and businesses.</p>
+        <a href="/contact.html" class="btn btn-primary animate-fade-up delay-2">Schedule Consultation</a>
+    </div>
+    
+    <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+    </div>
+</section>
+
+
+    <!-- Who We Are Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="two-column">
+                <div class="column animate-slide-left">
+                    <img src="images/team image.jpeg" alt="Maurlex & Co. Legal Team in Abuja" class="section-image">
+                </div>
+                <div class="column animate-slide-right">
+                    <h2 class="section-title">Who We Are</h2>
+                    <p class="section-text">
+                        Maurlex & Co. is a leading law firm in Abuja providing comprehensive legal and business advisory services across Nigeria. 
+                        With a team of experienced professionals, we deliver strategic solutions tailored to meet the unique 
+                        needs of our clients.
+                    </p>
+                    <p class="section-text">
+                        Our practice spans corporate and commercial law, tax advisory, litigation, real estate, regulatory 
+                        compliance, and more. We pride ourselves on delivering exceptional service with integrity, 
+                        professionalism, and a client-first approach.
+                    </p>
+                    <a href="/about.html" class="btn btn-outline">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Areas Preview -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Our Practice Areas</h2>
+                <p class="section-subtitle">Comprehensive legal solutions across multiple domains</p>
+            </div>
+            
+            <div class="practice-grid" id="practiceAreasGrid">
+                <a href="/practice-areas/corporate-commercial.html" class="practice-card animate-fade-up">
+                    <div class="practice-icon">🏢</div>
+                    <h3 class="practice-title">Corporate & Commercial Law</h3>
+                    <p class="practice-summary">Strategic legal guidance for businesses navigating complex corporate transactions in Nigeria.</p>
+                    <span class="practice-link">Learn More →</span>
+                </a>
+
+                <a href="/practice-areas/tax-advisory.html" class="practice-card animate-fade-up delay-1">
+                    <div class="practice-icon">💰</div>
+                    <h3 class="practice-title">Tax Advisory</h3>
+                    <p class="practice-summary">Expert tax planning and compliance services to optimize your financial position.</p>
+                    <span class="practice-link">Learn More →</span>
+                </a>
+
+                <a href="/practice-areas/general-legal.html" class="practice-card animate-fade-up delay-2">
+                    <div class="practice-icon">⚖️</div>
+                    <h3 class="practice-title">General Legal Services</h3>
+                    <p class="practice-summary">Comprehensive legal support for individuals and businesses across diverse matters.</p>
+                    <span class="practice-link">Learn More →</span>
+                </a>
+
+                <a href="/practice-areas/regulatory-compliance.html" class="practice-card animate-fade-up delay-3">
+                    <div class="practice-icon">🛡️</div>
+                    <h3 class="practice-title">Regulatory Compliance</h3>
+                    <p class="practice-summary">Ensuring your business meets all regulatory requirements and industry standards.</p>
+                    <span class="practice-link">Learn More →</span>
+                </a>
+
+                <a href="/practice-areas/real-estate.html" class="practice-card animate-fade-up">
+                    <div class="practice-icon">🏠</div>
+                    <h3 class="practice-title">Real Estate Advisory</h3>
+                    <p class="practice-summary">Expert guidance on property transactions, leasing, and real estate development.</p>
+                    <span class="practice-link">Learn More →</span>
+                </a>
+
+                <a href="/practice-areas/litigation.html" class="practice-card animate-fade-up delay-1">
+                    <div class="practice-icon">⚖️</div>
+                    <h3 class="practice-title">Litigation Services</h3>
+                    <p class="practice-summary">Aggressive representation in court to protect your interests.</p>
+                    <span class="practice-link">Learn More →</span>
+                </a>
+            </div>
+            
+            <div class="text-center" style="margin-top: 60px;">
+                <a href="/practice-areas.html" class="btn btn-primary">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Why Choose Maurlex & Co.</h2>
+                <p class="section-subtitle">Excellence in every aspect of our service</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card animate-fade-up">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Experienced Professionals</h3>
+                    <p class="feature-text">
+                        Our team comprises seasoned lawyers with decades of combined experience across diverse legal fields in Nigeria.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-fade-up delay-1">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Fast Turnaround</h3>
+                    <p class="feature-text">
+                        We understand time is critical in legal matters. Our efficient processes ensure prompt delivery.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-fade-up delay-2">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Confidential Handling</h3>
+                    <p class="feature-text">
+                        Your privacy is paramount. We maintain the highest standards of confidentiality in all matters.
+                    </p>
+                </div>
+                
+                <div class="feature-card animate-fade-up delay-3">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Client-Focused Solutions</h3>
+                    <p class="feature-text">
+                        We tailor our approach to your specific needs, ensuring personalized and effective legal solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Articles -->
+    <section class="section section-dark">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2 class="section-title">Legal Articles & Insights</h2>
+                <p class="section-subtitle">Stay informed with our latest legal insights and updates</p>
+            </div>
+            
+            <div class="articles-grid" id="featuredArticles">
+                <div class="text-center" style="grid-column: 1 / -1; padding: 40px;">
+                    <p style="color: rgba(255,255,255,0.7);">Loading articles...</p>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 60px;">
+                <a href="/articles.html" class="btn btn-outline-light">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="section section-light newsletter-section">
+        <div class="container">
+            <div class="newsletter-container">
+                <div class="newsletter-content animate-fade-up">
+                    <h2 class="section-title" style="color: white;">Subscribe to Our Newsletter</h2>
+                    <p class="section-subtitle">Get weekly legal insights and updates delivered to your inbox</p>
+                </div>
+                <form id="newsletterForm" class="newsletter-form animate-fade-up delay-1">
+                    <input 
+                        type="email" 
+                        id="newsletterEmail" 
+                        placeholder="Enter your email address" 
+                        required 
+                        class="newsletter-input"
+                    >
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+                <div id="newsletterMessage" class="form-message"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="section section-dark cta-section">
+        <div class="container">
+            <div class="cta-content text-center">
+                <h2 class="section-title animate-fade-up">Ready to Get Started?</h2>
+                <p class="section-subtitle animate-fade-up delay-1">
+                    Contact us today for a consultation and let us help you achieve your legal goals
+                </p>
+                <div class="cta-buttons animate-fade-up delay-2">
+                    <a href="/contact.html" class="btn btn-primary">Get in Touch</a>
+                    <a href="https://wa.me/2347060609806" class="btn btn-outline-light" target="_blank">
+                        WhatsApp Us
+                    </a>
+                </div>
+                <p class="cta-phone animate-fade-up delay-3">
+                    Or call us at <a href="tel:+2347060609806">+234 706 060 9806</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">MAURLEX & CO.</div>
+                    <p class="footer-description">
+                        Expert legal and business solutions for individuals, startups, and businesses. 
+                        Strategic guidance you can trust.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/maurlex-and-co-7635483a2" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/2347060609806" target="_blank" class="social-link" aria-label="WhatsApp">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                        </a>
+                        <a href="mailto:maurlexandco@gmail.com" class="social-link" aria-label="Email">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/practice-areas.html">Practice Areas</a></li>
+                        <li><a href="/team.html">Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="/practice-areas/corporate-commercial.html">Corporate Law</a></li>
+                        <li><a href="/practice-areas/litigation.html">Litigation</a></li>
+                        <li><a href="/practice-areas/real-estate.html">Real Estate</a></li>
+                        <li><a href="/practice-areas/tax-advisory.html">Tax Advisory</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-title">Contact</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            No. 23 Kubwa shopping Mall, Hamza Abdullahi Street Kubwa FCT Abuja
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            +234 706 060 9806
+                        </li>
+                        <li>
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            maurlexandco@gmail.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Valid Point Solutions. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="/privacy.html">Privacy Policy</a>
+                    <a href="/terms.html">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/2347060609806" 
+       class="whatsapp-float" 
+       target="_blank" 
+       aria-label="Contact us on WhatsApp">
+        <svg width="32" height="32" fill="white" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="/js/main.js"></script>
+</body>
+</html>
