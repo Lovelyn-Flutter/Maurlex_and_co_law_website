@@ -949,6 +949,168 @@ img {
   border: 1px solid #f5c6cb;
 }
 
+
+/* ============================================
+   REVIEWS CAROUSEL (NO BOOTSTRAP)
+   ============================================ */
+.reviews-carousel-wrapper {
+    position: relative;
+}
+
+.reviews-carousel {
+    position: relative;
+    width: 100%;
+}
+
+.review-slide {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.review-slide.active {
+    display: block;
+}
+
+.review-card {
+    background: var(--white);
+    padding: 50px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.review-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 20px;
+    border: 3px solid var(--gold);
+}
+
+.review-stars {
+    color: var(--gold);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.review-text {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--grey);
+    font-style: italic;
+    margin-bottom: 30px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.review-author {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.review-author strong {
+    color: var(--black);
+    font-size: 16px;
+}
+
+.review-author span {
+    color: var(--grey);
+    font-size: 14px;
+}
+
+.review-prev,
+.review-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gold);
+    color: var(--black);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    z-index: 10;
+}
+
+.review-prev {
+    left: -70px;
+}
+
+.review-next {
+    right: -70px;
+}
+
+.review-prev:hover,
+.review-next:hover {
+    background: var(--gold-dark);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.review-dots {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.dot {
+    height: 12px;
+    width: 12px;
+    background-color: var(--grey-light);
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active,
+.dot:hover {
+    background-color: var(--gold);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@media (max-width: 1024px) {
+    .review-prev { left: -20px; }
+    .review-next { right: -20px; }
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        padding: 35px 25px;
+        min-height: auto;
+    }
+    
+    .review-text {
+        font-size: 15px;
+    }
+    
+    .review-prev,
+    .review-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .review-prev { left: 10px; }
+    .review-next { right: 10px; }
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */

@@ -274,5 +274,62 @@
     </a>
 
     <script src="/js/main.js"></script>
+    <script>
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const messageDiv = document.getElementById('contactMessage');
+    const originalBtnText = submitBtn.innerHTML;
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span style="display: inline-flex; align-items: center; gap: 8px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" style="animation: spin 1s linear infinite;"><circle cx="12" cy="12" r="10" stroke-width="4" stroke="currentColor" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-width="4" stroke-linecap="round"/></svg>Sending...</span>';
+    
+    const formData = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        message: document.getElementById('message').value
+    };
+    
+    try {
+        const response = await fetch('/api/contact/submit', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        });
+        
+        const data = await response.json();
+        
+        messageDiv.style.display = 'block';
+        if (data.success) {
+            messageDiv.textContent = data.message;
+            messageDiv.className = 'form-message success';
+            this.reset();
+        } else {
+            messageDiv.textContent = data.message;
+            messageDiv.className = 'form-message error';
+        }
+    } catch (error) {
+        messageDiv.style.display = 'block';
+        messageDiv.textContent = 'An error occurred. Please try again.';
+        messageDiv.className = 'form-message error';
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnText;
+        
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
+        }, 5000);
+    }
+});
+</script>
+
+<style>
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+</style>
 </body>
 </html>

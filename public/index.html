@@ -34,6 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
+    
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
@@ -453,7 +454,7 @@
     <div class="hero-overlay"></div>
     
     <div class="hero-content container">
-        <h1 class="hero-title animate-fade-up">Expert Legal & Business Solutions You Can Trust</h1>
+        <h1 class="hero-title animate-fade-up">Legal Expertise & Business Solutions You Can Trust</h1>
         <p class="hero-subtitle animate-fade-up delay-1">Strategic guidance for individuals, startups, and businesses.</p>
         <a href="/contact.html" class="btn btn-primary animate-fade-up delay-2">Schedule Consultation</a>
     </div>
@@ -606,6 +607,85 @@
             </div>
         </div>
     </section>
+
+
+  <!-- Client Reviews Section -->
+<section class="section section-light">
+    <div class="container">
+        <div class="section-header text-center">
+            <h2 class="section-title animate-fade-up">What Our Clients Say</h2>
+            <p class="section-subtitle animate-fade-up delay-1">Trusted by businesses and individuals across Nigeria</p>
+            <p>Client testimonials are shared with permission. Some names have been abbreviated for privacy.</p>
+        </div>
+        
+        <div class="reviews-carousel-wrapper" style="max-width: 900px; margin: 10px auto 0; position: relative;">
+            <div class="reviews-carousel">
+                <!-- Review 1 -->
+                <div class="review-slide active">
+                    <div class="review-card">
+                
+                        <p class="review-text">
+                            "Thank you Maureen for another swift delivery. SCUML that normally takes weeks to deliver, you delivered under 2 weeks including the company incorporation. Thank you 🙏"
+                        </p>
+                                <div class="review-stars">★★★★★</div>
+                        <div class="review-author">
+                            <strong>H. I. Tijani</strong>
+                            <span>Founder, Eyestone</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="review-slide">
+                    <div class="review-card">
+                        <p class="review-text">
+                            "Thanks so much Barr. Maureen Ogbonnaya for your quick and competent work, and guidance throughout our company's registration. We hope to have more great experiences with you throughout the running of our company. God bless you."
+                        </p>
+     <div class="review-stars">★★★★★</div>
+                        <div class="review-author">
+                            <strong>C. C. Okogbuo</strong>
+                            <span>Founder, Prestsi</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="review-slide">
+                    <div class="review-card">
+                        <p class="review-text">
+                            "Thank you Maureenzo for your topnotch services. We have had a very positive experience working with you. Your services have consistently met our expectations in terms of timeliness and professionalism. We strongly recommend your services."
+                        </p>
+                                                <div class="review-stars">★★★★★</div>
+                        <div class="review-author">
+                            <strong>C. Dike</strong>
+                            <span>Company Secretary, Clearline Ltd</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation Arrows -->
+            <button class="review-prev" onclick="changeReview(-1)">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <button class="review-next" onclick="changeReview(1)">
+                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+            
+            <!-- Dots Indicator -->
+            <div class="review-dots">
+                <span class="dot active" onclick="currentReview(0)"></span>
+                <span class="dot" onclick="currentReview(1)"></span>
+                <span class="dot" onclick="currentReview(2)"></span>
+            </div>
+        </div>
+    </div>
+</section>
+
 
     <!-- Featured Articles -->
     <section class="section section-dark">
@@ -765,6 +845,38 @@
         </svg>
     </a>
 
+    <script>
+let currentSlide = 0;
+const slides = document.querySelectorAll('.review-slide');
+const dots = document.querySelectorAll('.review-dots .dot');
+
+function showReview(n) {
+    if (n >= slides.length) currentSlide = 0;
+    if (n < 0) currentSlide = slides.length - 1;
+    
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+function changeReview(n) {
+    currentSlide += n;
+    showReview(currentSlide);
+}
+
+function currentReview(n) {
+    currentSlide = n;
+    showReview(currentSlide);
+}
+
+// Auto-play carousel every 5 seconds
+setInterval(() => {
+    currentSlide++;
+    showReview(currentSlide);
+}, 5000);
+</script>
     <!-- JavaScript -->
     <script src="/js/main.js"></script>
 </body>

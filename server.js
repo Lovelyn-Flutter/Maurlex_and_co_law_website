@@ -16,7 +16,6 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
   params: {
@@ -28,7 +27,6 @@ const storage = new CloudinaryStorage({
 
 const upload = multer({ storage: storage });
 
-
 app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -39,18 +37,15 @@ app.use(session({
   cookie: { maxAge: 24 * 60 * 60 * 1000 }
 }));
 
-
 mongoose.connect(process.env.MONGO_URL || 'mongodb://localhost:27017/maurlex', {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
   console.log('MongoDB Connected Successfully');
 }).catch(err => {
-  console.error(' MongoDB Connection Error:', err);
+  console.error('MongoDB Connection Error:', err);
 });
 
-
-// Article Schema
 const articleSchema = new mongoose.Schema({
   title: { type: String, required: true },
   slug: { type: String, required: true, unique: true },
@@ -59,6 +54,7 @@ const articleSchema = new mongoose.Schema({
   image: { type: String, default: '/images/placeholder-article.jpg' },
   category: { type: String, default: 'General' },
   author: { type: String, default: 'Maurlex Team' },
+  views: { type: Number, default: 0 },
   createdAt: { type: Date, default: Date.now },
   updatedAt: { type: Date, default: Date.now }
 });
@@ -86,7 +82,6 @@ const contactSchema = new mongoose.Schema({
 
 const Contact = mongoose.model('Contact', contactSchema);
 
-
 async function addToBrevoList(email, name = '') {
   try {
     const response = await axios.post(
@@ -113,7 +108,6 @@ async function addToBrevoList(email, name = '') {
     throw error;
   }
 }
-
 
 async function sendBrevoEmail(to, subject, htmlContent) {
   try {
@@ -143,13 +137,9 @@ async function sendBrevoEmail(to, subject, htmlContent) {
 }
 
 const isAuthenticated = (req, res, next) => {
-  if (req.session.isAdmin) {
-    next();
-  } else {
-    res.status(401).json({ error: 'Unauthorized' });
-  }
+  if (req.session.isAdmin) next();
+  else res.status(401).json({ error: 'Unauthorized' });
 };
-
 
 app.get('/api/articles/recent', async (req, res) => {
   try {
@@ -161,16 +151,33 @@ app.get('/api/articles/recent', async (req, res) => {
   }
 });
 
-
 app.get('/api/articles', async (req, res) => {
   try {
-    const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 9;
+    const page = Math.max(1, parseInt(req.query.page || '1', 10));
+    const limit = Math.max(1, parseInt(req.query.limit || '9', 10));
     const skip = (page - 1) * limit;
-    
-    const articles = await Article.find().sort({ createdAt: -1 }).skip(skip).limit(limit);
-    const total = await Article.countDocuments();
-    
+
+    const category = (req.query.category || '').trim();
+    const q = (req.query.q || '').trim();
+    const sort = (req.query.sort || '').trim();
+
+    const query = {};
+    if (category && category !== 'All' && category !== 'all') query.category = category;
+
+    if (q) {
+      query.$or = [
+        { title: { $regex: q, $options: 'i' } },
+        { excerpt: { $regex: q, $options: 'i' } },
+        { content: { $regex: q, $options: 'i' } }
+      ];
+    }
+
+    let sortObj = { createdAt: -1 };
+    if (sort === 'popular') sortObj = { views: -1, createdAt: -1 };
+
+    const articles = await Article.find(query).sort(sortObj).skip(skip).limit(limit);
+    const total = await Article.countDocuments(query);
+
     res.json({
       articles,
       currentPage: page,
@@ -183,19 +190,68 @@ app.get('/api/articles', async (req, res) => {
   }
 });
 
+app.get('/api/articles/search', async (req, res) => {
+  try {
+    const { q, category, page = 1, limit = 9 } = req.query;
+    const currentPage = Math.max(1, parseInt(page, 10));
+    const perPage = Math.max(1, parseInt(limit, 10));
+    const skip = (currentPage - 1) * perPage;
+
+    const query = {};
+
+    if (q) {
+      query.$or = [
+        { title: { $regex: q, $options: 'i' } },
+        { excerpt: { $regex: q, $options: 'i' } },
+        { content: { $regex: q, $options: 'i' } }
+      ];
+    }
+
+    if (category && category !== 'All' && category !== 'all') query.category = category;
+
+    const articles = await Article.find(query).sort({ createdAt: -1 }).skip(skip).limit(perPage);
+    const total = await Article.countDocuments(query);
+
+    res.json({
+      articles,
+      currentPage,
+      totalPages: Math.ceil(total / perPage),
+      total
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
+
+app.get('/api/articles/categories', async (req, res) => {
+  try {
+    const categories = await Article.aggregate([
+      { $group: { _id: '$category', count: { $sum: 1 } } },
+      { $sort: { count: -1 } }
+    ]);
+    res.json(categories);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Server error' });
+  }
+});
 
 app.get('/api/articles/:slug', async (req, res) => {
   try {
-    const article = await Article.findOne({ slug: req.params.slug });
-    if (!article) {
-      return res.status(404).json({ error: 'Article not found' });
-    }
+    const article = await Article.findOneAndUpdate(
+      { slug: req.params.slug },
+      { $inc: { views: 1 } },
+      { new: true }
+    );
 
-    const relatedArticles = await Article.find({ 
+    if (!article) return res.status(404).json({ error: 'Article not found' });
+
+    const relatedArticles = await Article.find({
       _id: { $ne: article._id },
-      category: article.category 
-    }).limit(3);
-    
+      category: article.category
+    }).sort({ createdAt: -1 }).limit(3);
+
     res.json({ article, relatedArticles });
   } catch (error) {
     console.error(error);
@@ -203,14 +259,10 @@ app.get('/api/articles/:slug', async (req, res) => {
   }
 });
 
-
 app.post('/api/newsletter/subscribe', async (req, res) => {
   try {
     const { email } = req.body;
-
-    if (!email) {
-      return res.status(400).json({ success: false, message: 'Email is required' });
-    }
+    if (!email) return res.status(400).json({ success: false, message: 'Email is required' });
 
     const subscription = new Newsletter({ email });
     await subscription.save();
@@ -225,48 +277,25 @@ app.post('/api/newsletter/subscribe', async (req, res) => {
       }
     }
 
-    res.json({ success: true, message: 'Subscription successful! Check your email for confirmation.' });
+    res.json({ success: true, message: 'Subscription successful.' });
   } catch (error) {
     if (error.code === 11000) {
-      return res.status(400).json({ success: false, message: 'Email already subscribed!' });
+      return res.status(400).json({ success: false, message: 'Email already subscribed.' });
     }
     console.error(error);
     res.status(500).json({ success: false, message: 'Subscription failed. Please try again.' });
   }
 });
 
-
 app.post('/api/contact/submit', async (req, res) => {
   try {
     const { name, email, phone, message } = req.body;
-
     if (!name || !email || !message) {
       return res.status(400).json({ success: false, message: 'Please fill in all required fields' });
     }
 
-    // Save to database
     const contact = new Contact({ name, email, phone, message });
     await contact.save();
-
-    if (process.env.BREVO_API_KEY) {
-      try {
-        const adminEmail = process.env.ADMIN_EMAIL || 'maurlexandco@gmail.com';
-        const emailHtml = `
-          <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone || 'Not provided'}</p>
-          <p><strong>Message:</strong></p>
-          <p>${message.replace(/\n/g, '<br>')}</p>
-        `;
-
-        await sendBrevoEmail(adminEmail, `New Contact from ${name}`, emailHtml);
-        contact.brevoSent = true;
-        await contact.save();
-      } catch (emailError) {
-        console.error('Email notification error:', emailError);
-      }
-    }
 
     if (process.env.BREVO_API_KEY && process.env.BREVO_LIST_ID) {
       try {
@@ -276,15 +305,13 @@ app.post('/api/contact/submit', async (req, res) => {
       }
     }
 
-    res.json({ success: true, message: 'Message sent successfully! We will get back to you soon.' });
+    res.json({ success: true, message: 'Message sent successfully. We will get back to you soon.' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ success: false, message: 'Failed to send message. Please try again.' });
   }
 });
 
-
-// Admin Login
 app.post('/api/admin/login', (req, res) => {
   const { password } = req.body;
   const adminPassword = process.env.ADMIN_PASSWORD || 'maurlex2024';
@@ -297,37 +324,27 @@ app.post('/api/admin/login', (req, res) => {
   }
 });
 
-// Admin Logout
 app.post('/api/admin/logout', (req, res) => {
   req.session.destroy();
   res.json({ success: true, message: 'Logged out successfully' });
 });
 
-// Check Admin Auth Status
 app.get('/api/admin/check', (req, res) => {
   res.json({ isAuthenticated: !!req.session.isAdmin });
 });
 
-
-// Get Dashboard Stats
 app.get('/api/admin/stats', isAuthenticated, async (req, res) => {
   try {
     const articleCount = await Article.countDocuments();
     const contactCount = await Contact.countDocuments({ status: 'new' });
     const newsletterCount = await Newsletter.countDocuments();
-
-    res.json({
-      articleCount,
-      contactCount,
-      newsletterCount
-    });
+    res.json({ articleCount, contactCount, newsletterCount });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Server error' });
   }
 });
 
-// Get All Articles (Admin)
 app.get('/api/admin/articles', isAuthenticated, async (req, res) => {
   try {
     const articles = await Article.find().sort({ createdAt: -1 });
@@ -338,13 +355,10 @@ app.get('/api/admin/articles', isAuthenticated, async (req, res) => {
   }
 });
 
-// Get Single Article by ID (Admin)
 app.get('/api/admin/articles/:id', isAuthenticated, async (req, res) => {
   try {
     const article = await Article.findById(req.params.id);
-    if (!article) {
-      return res.status(404).json({ error: 'Article not found' });
-    }
+    if (!article) return res.status(404).json({ error: 'Article not found' });
     res.json(article);
   } catch (error) {
     console.error(error);
@@ -352,24 +366,20 @@ app.get('/api/admin/articles/:id', isAuthenticated, async (req, res) => {
   }
 });
 
-// Create Article (with Cloudinary upload)
 app.post('/api/admin/articles', isAuthenticated, upload.single('image'), async (req, res) => {
   try {
     const { title, excerpt, content, category } = req.body;
-    
-    if (!title || !excerpt || !content) {
-      return res.status(400).json({ error: 'Missing required fields' });
-    }
-    
+    if (!title || !excerpt || !content) return res.status(400).json({ error: 'Missing required fields' });
+
     const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-    
+
     const article = new Article({
       title,
       slug,
       excerpt,
       content,
       category: category || 'General',
-      image: req.file ? req.file.path : '/images/placeholder-article.jpg' // Cloudinary URL
+      image: req.file ? req.file.path : '/images/placeholder-article.jpg'
     });
 
     await article.save();
@@ -380,11 +390,10 @@ app.post('/api/admin/articles', isAuthenticated, upload.single('image'), async (
   }
 });
 
-// Update Article (with Cloudinary upload)
 app.put('/api/admin/articles/:id', isAuthenticated, upload.single('image'), async (req, res) => {
   try {
     const { title, excerpt, content, category } = req.body;
-    
+
     const updateData = {
       title,
       excerpt,
@@ -393,15 +402,10 @@ app.put('/api/admin/articles/:id', isAuthenticated, upload.single('image'), asyn
       updatedAt: Date.now()
     };
 
-    if (req.file) {
-      updateData.image = req.file.path; 
-    }
+    if (req.file) updateData.image = req.file.path;
 
     const article = await Article.findByIdAndUpdate(req.params.id, updateData, { new: true });
-    
-    if (!article) {
-      return res.status(404).json({ error: 'Article not found' });
-    }
+    if (!article) return res.status(404).json({ error: 'Article not found' });
 
     res.json({ success: true, message: 'Article updated successfully', article });
   } catch (error) {
@@ -410,44 +414,16 @@ app.put('/api/admin/articles/:id', isAuthenticated, upload.single('image'), asyn
   }
 });
 
-// Delete Article
 app.delete('/api/admin/articles/:id', isAuthenticated, async (req, res) => {
   try {
     const article = await Article.findByIdAndDelete(req.params.id);
-    
-    if (!article) {
-      return res.status(404).json({ error: 'Article not found' });
-    }
-
+    if (!article) return res.status(404).json({ error: 'Article not found' });
     res.json({ success: true, message: 'Article deleted successfully' });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: 'Failed to delete article' });
   }
 });
-
-// Get All Contacts (Admin)
-app.get('/api/admin/contacts', isAuthenticated, async (req, res) => {
-  try {
-    const contacts = await Contact.find().sort({ submittedAt: -1 });
-    res.json(contacts);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Server error' });
-  }
-});
-
-// Get All Newsletter Subscribers (Admin)
-app.get('/api/admin/newsletter', isAuthenticated, async (req, res) => {
-  try {
-    const subscribers = await Newsletter.find().sort({ subscribedAt: -1 });
-    res.json(subscribers);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Server error' });
-  }
-});
-
 
 app.get('/api/admin/contacts', isAuthenticated, async (req, res) => {
   try {
@@ -469,59 +445,9 @@ app.get('/api/admin/newsletter', isAuthenticated, async (req, res) => {
   }
 });
 
+const port = process.env.PORT || 4000;
 
-app.get('/api/articles/search', async (req, res) => {
-  try {
-    const { q, category, page = 1, limit = 9 } = req.query;
-    const skip = (page - 1) * limit;
-    
-    let query = {};
-    
-    if (q) {
-      query.$or = [
-        { title: { $regex: q, $options: 'i' } },
-        { excerpt: { $regex: q, $options: 'i' } },
-        { content: { $regex: q, $options: 'i' } }
-      ];
-    }
-    
-    if (category && category !== 'All') {
-      query.category = category;
-    }
-    
-    const articles = await Article.find(query).sort({ createdAt: -1 }).skip(skip).limit(parseInt(limit));
-    const total = await Article.countDocuments(query);
-    
-    res.json({
-      articles,
-      currentPage: parseInt(page),
-      totalPages: Math.ceil(total / limit),
-      total
-    });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Server error' });
-  }
-});
-
-
-app.get('/api/articles/categories', async (req, res) => {
-  try {
-    const categories = await Article.aggregate([
-      { $group: { _id: '$category', count: { $sum: 1 } } },
-      { $sort: { count: -1 } }
-    ]);
-    res.json(categories);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: 'Server error' });
-  }
-});
-
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(` Server running on http://localhost:${PORT}`);
-  console.log(`Admin Panel: http://localhost:${PORT}/admin/login.html`);
-  console.log(`Cloudinary: ${process.env.CLOUDINARY_CLOUD_NAME ? 'Connected' : 'Not configured'}`);
-  console.log(`Brevo: ${process.env.BREVO_API_KEY ? 'Connected' : 'Not configured'}`);
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
+  console.log(`Admin Panel: http://localhost:${port}/admin/login.html`);
 });
