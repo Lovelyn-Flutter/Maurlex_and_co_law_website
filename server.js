@@ -116,7 +116,7 @@ async function sendBrevoEmail(to, subject, htmlContent) {
       {
         sender: {
           name: 'Maurlex & Co.',
-          email: process.env.BREVO_SENDER_EMAIL || 'maurlexandco@gmail.com'
+          email: process.env.BREVO_SENDER_EMAIL || 'info@maurlexandco.com'
         },
         to: [{ email: to }],
         subject: subject,
